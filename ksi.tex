@@ -1,0 +1,229 @@
+\documentclass[10pt,twoside,a4paper]{article}
+
+%\usepackage{abstract}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+	%\usepackage{apacite}
+%\usepackage{apl}
+	%\usepackage[polski]{babelbib}
+	%\usepackage{bibtopic}
+	%\usepackage[
+	%backend=biber,
+	%style=alphabetic,
+	%sorting=ynt
+	%]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[nottoc,numbib]{tocbibind}
+
+\usepackage{cite}
+\usepackage{latexsym}
+\usepackage{indentfirst}
+\usepackage{listings}
+%\usepackage{graphicx} 
+	%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+	%\usepackage{hyperref}
+%\usepackage{indentfirst}
+
+	%\usepackage{makeidx}
+%\usepackage{natbib}
+
+%\usepackage{setspace}
+	%\usepackage{tabulary}
+	%\usepackage[nottoc]{tocbibind}
+
+	%\setlength{\parindent}{3pt}
+
+\title{Klasyfikator Stron Internetowych\\ jako system informatyczny ograniczający\\ dostęp do internetu przy wykorzystaniu\\ klasyfikatora słów kluczowych z wagą\\}
+\author{Piotr Wojcik\\
+    PJA,\\
+    Lublin,
+    \texttt{piotr.wojcik@pja.edu.pl}}
+\date{\today}
+
+
+\begin{document}
+%\frenchspacing
+\maketitle
+\bibliographystyle{plunsrt}
+%\cleardoublepage
+
+%\tableofcontents
+%\clearpage
+
+\section{Abstrakt}
+\indent Artykuł opisuje nową metodę przeszukiwania stron Internetowych w poszukiwaniu stron niebezpiecznych dla Internauty. Zastosowano tu słowa kluczowe z parametrem wagi w celu klasyfikacji a nawet cenzury dostępu do Internetu dzięki liście stron zablokowanych umieszczonych na przygotowanych serwerach DNS.\\
+\\
+Słowa kluczowe:
+\textit{Internet, klasyfikator, klasyfikacja, słowa kluczowe z wagą, DNS}
+
+\section{Wstęp}
+
+\indent Niemal każdą zaindeksowaną stronę w Internecie można znaleść w odpowiedniej wyszukiwarce za pomocą \textbf{słów kluczowych} (ang.\textbf{ keywords}). Z tego powodu istnieje możliwość sklasyfikowania strony internetowej za pomocą odpowiednich słów. Stąd stosunkowo jest łatwo odkreślić dla jakiego użytkownika Internetu przeznaczona jest dana strona internetowa.
+
+W tym artykule chciałbym przybliżyć podstawy rozpoznawania stron Internetowych za pomocą \textbf{słów kluczowych z wagą}. Na podstawie analizy występowania słów kluczowych zwanych także \textbf{frazą wyszukiwania} (ang. \textbf{search phrase}) można określić dla jakiej kategorii wiekowej dopuszczalna jest strona. Można to określić jawnie bądź przez domniemanie. Na przykład jeśli na stronie występuje słowo "nazizm" to bardzo prawdopodobnie strona ta nie będzie odpowiednia dla użytkownika w wieku do 14 lat. Jest to jawny warunek wykluczający. Klasyfikacja za pomocą domniemania jest bardziej skomplikowana. Jeśli natomiast w stronie Internetowej występuje fraza "Adolf Hitler" to prawdopodobnie przez skojarzenie strona będzie zakwalifikowana jako strona o nazizmie i stąd także będzie podlegała odpowiedniej klasyfikacji. Jednak powyższa fraza może dotyczyć strony z biografią Adolfa Hitlera i stąd może być odpowiednia dla uczniów szkoły średniej jednak wciąż fraza jest ona na tyle silna by wykluczyć młodego Internautę. 
+
+Rodzi się tu problem odpowiedniej klasyfikacji występujących słów kluczowych. Weźmy na przykład słowo "piersi", które może odnosić się do stron internetowych o na przykład tematyce erotycznej lub wręcz pornograficznej, ale nie możemy tego jednoznacznie stwierdzić, ponieważ może ono wystąpić w sąsiedztwie słów "rak piersi" i być stroną o tematyce medycznej. Jest to przykład możliwej klasyfikacji nie aż tak silnej jak w przypadku stron ze słowem kluczowym "Hitler", ponieważ w rozróżnieniu od stron pornograficznej strony o tematyce medycznej mogą być dopuszczone dla Internauty w wieku licealnym a być może i młodszym. Dlatego istnieje potrzeba odpowiedniego pogrupowania słów kluczowych. Mogą nam pomóc w tym odpowiednie słowniki wraz z określeniem wag, które będą rozróżniały słowa kluczowe klasyfikujące silnie od fraz słabszych, które mogą jedynie naprowadzić na tematykę strony internetowej.
+
+Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuronowych, które dla przykładu rozpoznają nagość na zdjęciach i filmach\cite{will_archer_arentz_classifying_nodate}\cite{radhouane_guermazi_combining_2007}\cite{giuseppe_amato_detection_2009}. Technika wykrywania pokrycia ciała skórą w rozpoznawaniu nagości cieszy się popularnością i zdaje dobre wyniki\cite{mohammad_reza_mahmoodi_high_nodate}. Ta tematyka nie będzie poruszana w tym artykule.
+
+Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć.\cite{piotr_luczuk_cyberwojna_2016}
+
+\section{DNS}
+Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984}\cite{p._mockapetris_domain_1987}
+
+Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4*1038\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
+
+Drugim sposobem jest zamiana serwera DNS w chronionym komputerze, ale i ta operacja wymaga często uprawnień administratora.
+	
+\section{Słowa kluczowe z wagą}
+Temat słów kluczowych z wagą został poruszony wcześniej w artykule []. Opis słów kluczowych z wagą.
+
+\section{Ustalanie wag oraz wydobywanie nowych słów kluczowych}
+Cechą języka naturalnego jest, że wciąż się rozwija. Tworzone są nowe słowa lub idiomy. Część słów wychodzi z obiegu stając się anachronizmami. Dlatego bardzo ważne jest aby słownik słów kluczowych i jego wagi były stale uaktualniane. W bazie danych klasyfikację stron Internetowych zaczynamy z zdefiniowanym słownikiem początkowym. Na jego podstawie możemy sklasyfikować część stron internetowych na podstawie, których możemy prowadzić dalszą ekstrakcję słów kluczowych. Cechą podobnych stron internetowych jest fakt, że używają podobnych słów kluczowych. Na tej podstawie można za pomocą odpowiedniego algorytmu ustalić aktualne wagi dla fraz wyszukiwania. O ile ustalenie wag jest czynnością stosunkowo prostą to już o wiele trudniejszym zadaniem jest wydobycie nowych fraz dla słownika klasyfikującego. Wymaga to zbudowania słownika słów oraz fraz występujących na każdej stronie wraz z ich liczebnością i porównać ten słownik z podobnymi stronami. Nie jest to zadanie trywialne i wymaga znacznych zasobów sprzętowych.
+
+Do rozważenia przedstawiam szkic algorytmu, który wymaga dalszej dyskusji i ulepszeń.[alg1]
+
+%\lstinputlisting[language=c]
+\lstdefinelanguage{csharp} {morekeywords={foreach, if, in, like}, sensitive=false, morecomment=[l]{//}, morecomment=[s]{/*}{*/}, morestring=[b]", }
+\lstset{
+numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
+}
+\begin{lstlisting}[title={Alg 1. Podstawowy algorytm klasyfikacji stron internetowych}, language=csharp, label=alg1] 
+
+//input: 
+//    phrase - analysed phrase, 
+//    analysedPage - web page with URL and other characteristics, 
+//    compromisedWebPages - colection of compromised web pages, 
+//    redFlagPhraseDictionary - colection of phrases 
+//                              that compromise web page
+//output:
+//    score - points of page classification
+
+foreach (phrase in webPageTextContent)
+{
+  mostCompromisedPages = compromisedWebPages.top(NO_TOP_PAGES);
+  if((phrase in redFlagPhraseDictionary) 
+      || (phrase like redFlagPhraseDictionary))
+  {
+    redFlagPhraseDictionary.computeWage(phrase, mostCompromisedPages);
+    score += redFlagPhraseDictionary.wage(phrase);
+    compromisedWebPages += analysedPage;
+    compromiseedWebPages.UpdateWages(phrase);
+  }
+}
+
+\end{lstlisting}
+
+
+\section{Kategorie stron internetowych (grupy stron internetowych)}
+Strony internetowe możemy podzielić na następujące grupy stron:
+\begin{itemize}
+\item strony informacyjne,
+\item	internetowe bazy danych,
+\item	strony komercyjne (sklepy),
+\item	serwisy społecznościowe,
+\item	portale randkowe,
+\item	strony erotyczne,
+\item	strony pornograficzne,
+\item	strony z ryzykiem (na przykład rózne odmiany kasyn internetowych),
+\item	strony z mową nienawiści,
+\item	strony z nielegalną treścią,
+\item	strony z nienawiścią oraz wszelką przemocą.
+\end{itemize}
+
+Nie jest to finalna lista i prawdopodobnie można zaproponować bardziej złożoną klasyfikację stron internetowych. Każdy algorytm klasyfikujący będzie używał innego zestawu wzorcowych słów klasyfikujących wraz z odpowiednimi wagami po to aby w przypadku zakwalifikowania strony jako niebezpiecznej dla Internauty można było opisać ją i analizować pod kątem odpowiedniego algorytmu.
+
+\section{Moduły Systemu Informatycznego Klasyfikatora Stron Internetowych}
+
+Klasyfikator Stron Internetowych w skrócie KSI (ang. Web Page Classification Information System WPCIS) będzie składać się kilku baz danych i programach wykorzystujących algorytmy potrzebne do przetwarzania danych.
+
+Pierwszym modułem będzie baza danych stron nieprzetworzonych lub wstępnie przetworzonych. Zawierać będzie ona graf reprezentujący odkrytą część Internetu wraz z jej odpowiednim kolorem. Kolor określać będzie stronę nieprzejrzaną, przejrzaną wstępnie przez jeden z początkujących algorytmów, stronę w pełni sklasyfikowaną i stronę przetworzoną wraz z jej dalszymi odnośnikami. Strona sklasyfikowana należała będzie do odpowiedniej kategorii wraz z uzasadnieniem, które określi na podstawie, których najważniejszych słów kluczowych została oceniona w raz z ich liczebnością.
+
+Drugi moduł będzie posiadał kluczowe znaczenie ze względu na przechowywanie słownika klasyfikujących słów kluczowych wraz z ich wagami. Baza ta w toku działania algorytmów będzie bardzo często uaktualniania oraz będzie stanowiła serce dynamicznego systemu ocen KSI. Bardzo ważne tu będzie przechowywanie perspektyw, które będą opisywały datę aktualnego algorytmu klasyfikującymi wraz z używanymi wagami oraz informację do jakiej kategorii klasyfikuje frazę.
+
+Trzeci moduł to moduł określający wagi słów kluczowych. Jego zadaniem będzie ciągła aktualizacja wag słów kluczowych na podstawie przetworzonych słów z sklasyfikowanych stron internetowych.
+
+Czwarty moduł to baza danych, na której głównie będą dopisywane już przetworzone strony wraz z ich klasyfikacją oraz uzasadnieniem. W pewnych przypadkach klasyfikacja strony może ulec zmianie stąd istnieje potrzeba zapewnienia tej strony ciągłej możliwości aktualizacji danych. Jest to bardzo ważny element systemu, ponieważ jest to moduł na podstawie, którego będzie budowany serwer DNS systemu.
+
+Piąty oraz najtrudniejszy do zaimplementowania jest moduł prowadzący ekstrakcję nowych słów kluczowych.
+
+Oczywiście wraz z rozrastaniem się wspomnianego systemu informatycznego dane moduły będzie można podzielić na drobniejsze. Na przykład najczęściej wykorzystywany i wymagający niezawodności moduł czwarty można podzielić na bazy danych stron internetowych należących do odpowiedniej kategorii (grupy stron). Na tej podstawie można zbudować bazę danych pod system DNS, dla odpowiedniej grupy wiekowej lub wykluczających dostęp do odpowiedniej popularnej grupy stron internetowych.
+
+\section{Zastosowanie Klasyfikatora Stron Internetowych}
+
+Pierwszym oczywistym miejscem zastosowania klasyfikatora będzie środowisko domowe, gdzie potrzeba zastosowania bezpiecznego Internetu ze względu na posiadanie małych dzieci jest niezbędnie potrzebna. W drugiej kolejności miejsce gdzie ów klasyfikator spełni swoją rolę jest środowisko pracy lub wszelkie placówki edukacyjne, gdzie pracodawca prawdopodobnie by chciał ograniczyć pracownikom dostęp do niektórych kategorii stron internetowych.
+
+\section{Podsumowanie i plany na przyszłość}
+
+Celem tego artykułu jest zaproponowanie nowej metody klasyfikacji stron internetowych. Planem autora jest zbudowanie działającego systemu bazującego na tym artykule. Najważniejszym produktem tego systemu będą gotowe serwery DNS posiadające wpisy do odpowiednich, dopuszczony grup stron internetowych. Umożliwi to takie skonstruowanie serwerów DNS, dzięki którym komunikacja do stron z nieodpowiednią treścią będzie niemożliwa lub znacznie utrudniona.
+
+
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{eegsignal.png}
+%\includegraphics{eegsignal.png}
+%\caption{Example of aquired EEG signal from Emotiv device}
+%\label{fig:eegsignal}
+%\end{figure}
+
+%At the begining we are going to focus on signals similar to those presented in Figure \ref{fig:eegsignal}.
+
+
+%Before any computationare being made by aquizited data a fixed component should be reduced from given vectors. The simplest way to do that is shown in bellow algoritm \ref{alg:reducefc}.
+
+%\begin{algorithm}
+%    \caption{Approksimation of the current provided input data}
+%    \begin{algorithmic}
+%    \While {\(e \in DATA\)}
+%	\State \(cnte:=0\)
+%	\While {\(t_{e} \in \textless t_{e_i}, t_{e_{j+1}} \textgreater\)}
+%		\State sum+=e
+%		\State cnte++
+%	\EndWhile
+%	\State \(APRODATA[t_{e}] := suma/cnte\)
+%	\State sum:=0
+%	\State cnte:=0;
+%    \EndWhile
+
+%    \end{algorithmic}
+%\end{algorithm}
+
+%\begin{algorithm}
+%    \caption{Approksimation rest data according to artificial neural network}
+%    \begin{algorithmic}
+%    \While {\(t_{e} \in \textless t_{e_i}, t_{e_{j+1}} \textgreater \in T \)}
+%	\If{\(e_{t} \in U \lor e_{t} \in V\)}
+%		\State \(e_{t} \in A\)
+%	\Else
+%		\State \(e_{t}''' \in A\)
+%	\EndIf
+%    \EndWhile
+
+%    \end{algorithmic}
+%\end{algorithm}
+
+%\begin{algorithm}
+%    \caption{Simple Spectrum Analytic Algorithm}
+%    \begin{algorithmic}
+%    \While {\(a_{ \textless t_i, t_j+1 \textgreater}  \in APRODATA\)}
+%	     \State{\(H_{j} = Hann(a_{ \textless t_i, t_j+1 \textgreater})\)} 	
+%    \EndWhile
+%    \For {\(a \in H_j\)}
+%	 \State \(
+%	 Amp = \sqrt{real(fft(a)^2+imag(fft(a)^2}
+%	 \)
+%    \EndFor
+
+%    \end{algorithmic}
+
+%\end{algorithm}
+
+\bibliography{ksi}
+
+
+
+\end{document}
