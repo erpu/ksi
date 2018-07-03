@@ -39,7 +39,7 @@
 \title{Klasyfikator Stron Internetowych\\ jako system informatyczny ograniczający\\ dostęp do internetu przy wykorzystaniu\\ klasyfikatora słów kluczowych z wagą\\}
 \author{Piotr Wojcik\\
     PJA,\\
-    Lublin,
+    Warszawa,
     \texttt{piotr.wojcik@pja.edu.pl}}
 \date{\today}
 
@@ -63,18 +63,18 @@ Słowa kluczowe:
 
 \indent Niemal każdą zaindeksowaną stronę w Internecie można znaleść w odpowiedniej wyszukiwarce za pomocą \textbf{słów kluczowych} (ang.\textbf{ keywords}). Z tego powodu istnieje możliwość sklasyfikowania strony internetowej za pomocą odpowiednich słów. Stąd stosunkowo jest łatwo odkreślić dla jakiego użytkownika Internetu przeznaczona jest dana strona internetowa.
 
-W tym artykule chciałbym przybliżyć podstawy rozpoznawania stron Internetowych za pomocą \textbf{słów kluczowych z wagą}. Na podstawie analizy występowania słów kluczowych zwanych także \textbf{frazą wyszukiwania} (ang. \textbf{search phrase}) można określić dla jakiej kategorii wiekowej dopuszczalna jest strona. Można to określić jawnie bądź przez domniemanie. Na przykład jeśli na stronie występuje słowo "nazizm" to bardzo prawdopodobnie strona ta nie będzie odpowiednia dla użytkownika w wieku do 14 lat. Jest to jawny warunek wykluczający. Klasyfikacja za pomocą domniemania jest bardziej skomplikowana. Jeśli natomiast w stronie Internetowej występuje fraza "Adolf Hitler" to prawdopodobnie przez skojarzenie strona będzie zakwalifikowana jako strona o nazizmie i stąd także będzie podlegała odpowiedniej klasyfikacji. Jednak powyższa fraza może dotyczyć strony z biografią Adolfa Hitlera i stąd może być odpowiednia dla uczniów szkoły średniej jednak wciąż fraza jest ona na tyle silna by wykluczyć młodego Internautę. 
+W tym artykule chciałbym przybliżyć podstawy rozpoznawania stron Internetowych za pomocą \textbf{słów kluczowych z wagą}. Na podstawie analizy występowania słów kluczowych zwanych także \textbf{frazą wyszukiwania} (ang. \textbf{search phrase}) można określić dla jakiej kategorii wiekowej dopuszczalna jest strona. Można to określić jawnie bądź przez domniemanie. Na przykład jeśli na stronie występuje słowo,,nazizm'' to bardzo prawdopodobnie strona ta nie będzie odpowiednia dla użytkownika w wieku do 14 lat. Jest to jawny warunek wykluczający. Klasyfikacja za pomocą domniemania jest bardziej skomplikowana. Jeśli natomiast w stronie Internetowej występuje fraza ,,Adolf Hitler'' to prawdopodobnie przez skojarzenie strona będzie zakwalifikowana jako strona o nazizmie i stąd także będzie podlegała odpowiedniej klasyfikacji. Jednak powyższa fraza może dotyczyć strony z biografią Adolfa Hitlera i stąd może być odpowiednia dla uczniów szkoły średniej jednak wciąż fraza jest ona na tyle silna by wykluczyć młodego Internautę. 
 
-Rodzi się tu problem odpowiedniej klasyfikacji występujących słów kluczowych. Weźmy na przykład słowo "piersi", które może odnosić się do stron internetowych o na przykład tematyce erotycznej lub wręcz pornograficznej, ale nie możemy tego jednoznacznie stwierdzić, ponieważ może ono wystąpić w sąsiedztwie słów "rak piersi" i być stroną o tematyce medycznej. Jest to przykład możliwej klasyfikacji nie aż tak silnej jak w przypadku stron ze słowem kluczowym "Hitler", ponieważ w rozróżnieniu od stron pornograficznej strony o tematyce medycznej mogą być dopuszczone dla Internauty w wieku licealnym a być może i młodszym. Dlatego istnieje potrzeba odpowiedniego pogrupowania słów kluczowych. Mogą nam pomóc w tym odpowiednie słowniki wraz z określeniem wag, które będą rozróżniały słowa kluczowe klasyfikujące silnie od fraz słabszych, które mogą jedynie naprowadzić na tematykę strony internetowej.
+Rodzi się tu problem odpowiedniej klasyfikacji występujących słów kluczowych. Weźmy na przykład słowo ,,piersi'', które może odnosić się do stron internetowych o na przykład tematyce erotycznej lub wręcz pornograficznej, ale nie możemy tego jednoznacznie stwierdzić, ponieważ może ono wystąpić w sąsiedztwie słów ,,rak piersi'' i być stroną o tematyce medycznej. Jest to przykład możliwej klasyfikacji nie aż tak silnej jak w przypadku stron ze słowem kluczowym ,,Hitler'', ponieważ w rozróżnieniu od stron pornograficznej strony o tematyce medycznej mogą być dopuszczone dla Internauty w wieku licealnym a być może i młodszym. Dlatego istnieje potrzeba odpowiedniego pogrupowania słów kluczowych. Mogą nam pomóc w tym odpowiednie słowniki wraz z określeniem wag, które będą rozróżniały słowa kluczowe klasyfikujące silnie od fraz słabszych, które mogą jedynie naprowadzić na tematykę strony internetowej.
 
-Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuronowych, które dla przykładu rozpoznają nagość na zdjęciach i filmach\cite{will_archer_arentz_classifying_nodate}\cite{radhouane_guermazi_combining_2007}\cite{giuseppe_amato_detection_2009}. Technika wykrywania pokrycia ciała skórą w rozpoznawaniu nagości cieszy się popularnością i zdaje dobre wyniki\cite{mohammad_reza_mahmoodi_high_nodate}. Ta tematyka nie będzie poruszana w tym artykule.
+Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuronowych, które dla przykładu rozpoznają nagość na zdjęciach i filmach\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. Technika wykrywania pokrycia ciała skórą w rozpoznawaniu nagości cieszy się popularnością i zdaje dobre wyniki\cite{mohammad_reza_mahmoodi_high_nodate}. Ta tematyka nie będzie poruszana w tym artykule.
 
 Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć.\cite{piotr_luczuk_cyberwojna_2016}
 
 \section{DNS}
-Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984}\cite{p._mockapetris_domain_1987}
+Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984, p._mockapetris_domain_1987}
 
-Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4*1038\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
+Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4^{1038}\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
 
 Drugim sposobem jest zamiana serwera DNS w chronionym komputerze, ale i ta operacja wymaga często uprawnień administratora.
 	
@@ -172,55 +172,6 @@ Celem tego artykułu jest zaproponowanie nowej metody klasyfikacji stron interne
 
 %At the begining we are going to focus on signals similar to those presented in Figure \ref{fig:eegsignal}.
 
-
-%Before any computationare being made by aquizited data a fixed component should be reduced from given vectors. The simplest way to do that is shown in bellow algoritm \ref{alg:reducefc}.
-
-%\begin{algorithm}
-%    \caption{Approksimation of the current provided input data}
-%    \begin{algorithmic}
-%    \While {\(e \in DATA\)}
-%	\State \(cnte:=0\)
-%	\While {\(t_{e} \in \textless t_{e_i}, t_{e_{j+1}} \textgreater\)}
-%		\State sum+=e
-%		\State cnte++
-%	\EndWhile
-%	\State \(APRODATA[t_{e}] := suma/cnte\)
-%	\State sum:=0
-%	\State cnte:=0;
-%    \EndWhile
-
-%    \end{algorithmic}
-%\end{algorithm}
-
-%\begin{algorithm}
-%    \caption{Approksimation rest data according to artificial neural network}
-%    \begin{algorithmic}
-%    \While {\(t_{e} \in \textless t_{e_i}, t_{e_{j+1}} \textgreater \in T \)}
-%	\If{\(e_{t} \in U \lor e_{t} \in V\)}
-%		\State \(e_{t} \in A\)
-%	\Else
-%		\State \(e_{t}''' \in A\)
-%	\EndIf
-%    \EndWhile
-
-%    \end{algorithmic}
-%\end{algorithm}
-
-%\begin{algorithm}
-%    \caption{Simple Spectrum Analytic Algorithm}
-%    \begin{algorithmic}
-%    \While {\(a_{ \textless t_i, t_j+1 \textgreater}  \in APRODATA\)}
-%	     \State{\(H_{j} = Hann(a_{ \textless t_i, t_j+1 \textgreater})\)} 	
-%    \EndWhile
-%    \For {\(a \in H_j\)}
-%	 \State \(
-%	 Amp = \sqrt{real(fft(a)^2+imag(fft(a)^2}
-%	 \)
-%    \EndFor
-
-%    \end{algorithmic}
-
-%\end{algorithm}
 
 \bibliography{ksi}
 
