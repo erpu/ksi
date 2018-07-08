@@ -1,0 +1,144 @@
+\documentclass[10pt,twoside,a4paper]{article}
+
+%\usepackage{abstract}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+	%\usepackage{apacite}
+%\usepackage{apl}
+	%\usepackage[polski]{babelbib}
+	%\usepackage{bibtopic}
+	%\usepackage[
+	%backend=biber,
+	%style=alphabetic,
+	%sorting=ynt
+	%]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc,numbib]{tocbibind}
+
+\usepackage{cite}
+\usepackage{latexsym}
+\usepackage{indentfirst}
+\usepackage{listings}
+%\usepackage{graphicx} 
+	%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+	%\usepackage{hyperref}
+%\usepackage{indentfirst}
+
+	%\usepackage{makeidx}
+%\usepackage{natbib}
+
+%\usepackage{setspace}
+	%\usepackage{tabulary}
+	%\usepackage[nottoc]{tocbibind}
+
+	%\setlength{\parindent}{3pt}
+
+\title{Web Page Classification Information System  as\\ an information software system\\ reducing access to Internet resources\\ using keywords with wages}
+\author{Piotr Wojcik\\
+    PJA,\\
+    Warszawa,
+    \texttt{piotr.wojcik@pja.edu.pl}}
+\date{\today}
+
+
+\begin{document}
+%\frenchspacing
+\maketitle
+\bibliographystyle{plunsrt}
+%\cleardoublepage
+
+%\tableofcontents
+%\clearpage
+
+\section{Abstract}
+Keywords:
+\textit{Internet, classificator, classification, keywords with wage, DNS}
+
+\section{Introduction}
+
+\section{DNS}
+	
+\section{Keywords with wages}
+
+\section{Keywords wages update and datamining}
+
+%\lstinputlisting[language=c]
+\lstdefinelanguage{csharp} {morekeywords={foreach, if, in, like}, sensitive=false, morecomment=[l]{//}, morecomment=[s]{/*}{*/}, morestring=[b]", }
+\lstset{
+numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
+}
+\begin{lstlisting}[title={Alg 1. Podstawowy algorytm klasyfikacji stron internetowych}, language=csharp, label=alg1] 
+
+//input: 
+//    phrase - analysed phrase, 
+//    analysedPage - web page with URL and other characteristics, 
+//    compromisedWebPages - colection of compromised web pages, 
+//    redFlagPhraseDictionary - colection of phrases 
+//                              that compromise web page
+//output:
+//    score - points of page classification
+//    compromisedWebPages - modyfied input object
+
+mostCompromisedPages = compromisedWebPages.top();
+foreach (phrase in webPageTextContent)
+{  
+  if((phrase in redFlagPhraseDictionary) 
+      || (phrase like redFlagPhraseDictionary))
+  {
+    redFlagPhraseDictionary.computeWage(phrase, mostCompromisedPages);
+    score += redFlagPhraseDictionary.wage(phrase);
+    compromisedWebPages += analysedPage;
+  }
+}
+\end{lstlisting}
+
+
+
+\begin{enumerate}
+\item 
+\item 
+\item 
+\end{enumerate}
+
+\section{Web pages category}
+
+\begin{itemize}
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\item 
+\end{itemize}
+
+\section{Web Page Classification Information System modules}
+
+\section{Web Page Classification Information System appliance}
+
+\section{Conclusion and future plans}
+
+
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{eegsignal.png}
+%\includegraphics{eegsignal.png}
+%\caption{Example of aquired EEG signal from Emotiv device}
+%\label{fig:eegsignal}
+%\end{figure}
+
+%At the begining we are going to focus on signals similar to those presented in Figure \ref{fig:eegsignal}.
+
+
+%\bibliography{ksi}
+
+
+
+\end{document}

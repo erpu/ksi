@@ -37,7 +37,7 @@
 	%\setlength{\parindent}{3pt}
 
 \title{Klasyfikator Stron Internetowych\\ jako system informatyczny ograniczający\\ dostęp do internetu przy wykorzystaniu\\ klasyfikatora słów kluczowych z wagą\\}
-\author{Piotr Wojcik\\
+\author{Piotr Wójcik\\
     PJA,\\
     Warszawa,
     \texttt{piotr.wojcik@pja.edu.pl}}
@@ -72,19 +72,20 @@ Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuro
 Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć.\cite{piotr_luczuk_cyberwojna_2016}
 
 \section{DNS}
-Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984, p._mockapetris_domain_1987}
+Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987}
 
-Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4^{1038}\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
+Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4*10^{1038}\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
 
 Drugim sposobem jest zamiana serwera DNS w chronionym komputerze, ale i ta operacja wymaga często uprawnień administratora.
 	
 \section{Słowa kluczowe z wagą}
-Temat słów kluczowych z wagą został poruszony wcześniej w artykule []. Opis słów kluczowych z wagą.
+%Temat słów kluczowych z wagą został poruszony wcześniej w artykule []. Opis słów kluczowych z wagą.
+Słowa kluczowe z wagą oprócz swojego znaczenia zapisanego w postaci słownej można rozszerzyć o krotkę posiadającą miarę istotności danego słowa w rozpatrywanym aktualnie algorytmie. Dla słowa ,,sex'' możemy nadać na przykład wartoć 0.6 tworząc krotkę (,,sex'', 0.6), która będzie wartością dla obiektu klasy WagedKeyword. Niech klasa ta zbudowana będzie z krotek, których pierwszym elementem będzie słowo w postaci ciągu znaków i wartością \(p\) taką, że \(p \in \langle 0,1\rangle\). Im większy jest podany parametr \textit{p} tym bardziej dane słowo jest brane pod uwagę podczas ustalenia iloci punktów danej strony i większe prawdopodobieństwo do zakfalifikowania danej strony jako niebezpieczną.
 
 \section{Ustalanie wag oraz wydobywanie nowych słów kluczowych}
 Cechą języka naturalnego jest, że wciąż się rozwija. Tworzone są nowe słowa lub idiomy. Część słów wychodzi z obiegu stając się anachronizmami. Dlatego bardzo ważne jest aby słownik słów kluczowych i jego wagi były stale uaktualniane. W bazie danych klasyfikację stron Internetowych zaczynamy z zdefiniowanym słownikiem początkowym. Na jego podstawie możemy sklasyfikować część stron internetowych na podstawie, których możemy prowadzić dalszą ekstrakcję słów kluczowych. Cechą podobnych stron internetowych jest fakt, że używają podobnych słów kluczowych. Na tej podstawie można za pomocą odpowiedniego algorytmu ustalić aktualne wagi dla fraz wyszukiwania. O ile ustalenie wag jest czynnością stosunkowo prostą to już o wiele trudniejszym zadaniem jest wydobycie nowych fraz dla słownika klasyfikującego. Wymaga to zbudowania słownika słów oraz fraz występujących na każdej stronie wraz z ich liczebnością i porównać ten słownik z podobnymi stronami. Nie jest to zadanie trywialne i wymaga znacznych zasobów sprzętowych.
 
-Do rozważenia przedstawiam szkic algorytmu, który wymaga dalszej dyskusji i ulepszeń.[alg1]
+Do rozważenia przedstawiam szkic algorytmu, który wymaga dalszej dyskusji i ulepszeń.[alg1] 
 
 %\lstinputlisting[language=c]
 \lstdefinelanguage{csharp} {morekeywords={foreach, if, in, like}, sensitive=false, morecomment=[l]{//}, morecomment=[s]{/*}{*/}, morestring=[b]", }
@@ -101,22 +102,31 @@ numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
 //                              that compromise web page
 //output:
 //    score - points of page classification
+//    compromisedWebPages - modyfied input object
 
+mostCompromisedPages = compromisedWebPages.top();
 foreach (phrase in webPageTextContent)
-{
-  mostCompromisedPages = compromisedWebPages.top(NO_TOP_PAGES);
+{  
   if((phrase in redFlagPhraseDictionary) 
       || (phrase like redFlagPhraseDictionary))
   {
     redFlagPhraseDictionary.computeWage(phrase, mostCompromisedPages);
     score += redFlagPhraseDictionary.wage(phrase);
     compromisedWebPages += analysedPage;
-    compromiseedWebPages.UpdateWages(phrase);
   }
 }
-
 \end{lstlisting}
 
+
+Algroytm ten jest zapisany w języku podobnym do C\# z jedną różnicą. Brak w nim operatora like jaki możemy spotkać w językach 4 generacji jak na przykład SQL, ale możliwe jest jego zastąpienieza pomocą metody like(). Zaimplementować ją można na wiele różnych sposobów. Na przykład korzystając z algorytmu Soundex stworzonego przez Roberta Russella i Margaret Odell\cite{donald_e._knuth_art_2002}. Algorytm ten zwraca podobieństwo fonetyczne wyrazów w postaci 4-znakowego kodu okrelający odległość fonetyczne podobieństwo tych wyrazów.
+
+Idea algorytmu polega na przeanalizowaniu wszystkich fraz \textit{phrase} analizowanej strony internetowej \textit{analysedPage} pod kątem występowania lub podobieństwa z zbiorem słów będących czerwoną flagą \textit{redFlagPhraseDictionary} (linia 15). Gdy fraza jest podobna lub w szczególności ma taką samą wartość alfanumeryczną to:
+\begin{enumerate}
+\item aktualizujemy wagi naszego klasyfikatora w klasie \textit{RedFlagPhraseDictionary} i aktualizujemy ranking w obiekcie klasy \textit{MostCompromisedPages} (linia 18),
+\item doliczamy punkty\textit{score} zdobyte podczas analizowania strony (linia19),
+\item dołączamy stronę do stron skompromitowanych (linia 20),
+\end{enumerate}
+Linia 12 pobiera ranking najbardziej skompromitowanych stron \textit{compromisedWebPages.top()} i jej słów \textit{phrase}, które będą brane pod uwagę podczas każdej iteracji pętli algorytmu.
 
 \section{Kategorie stron internetowych (grupy stron internetowych)}
 Strony internetowe możemy podzielić na następujące grupy stron:

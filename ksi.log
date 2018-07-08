@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.6.20)  24 JUN 2018 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.6.20)  8 JUL 2018 16:15
 entering extended mode
 **"E:/Articles/1. KSI/ksi.tex"
 ("E:/Articles/1. KSI/ksi.tex"
@@ -620,21 +620,20 @@ LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 49.
 (E:\MikTeX\texmfs\install\tex\latex\polski\ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (16.72289pt too wide) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
+
+ []
+
+
+Overfull \hbox (16.72289pt too wide) in paragraph at lines 64--65
 \OT4/cmr/m/n/10 powodu ist-nieje mo»li-wo±¢ sklasy-fikowa-nia strony in-ter-ne-
 towej za po-moc¡ odpowied-
  []
 
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 65.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 65.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 65.
 
-Overfull \hbox (9.44513pt too wide) in paragraph at lines 65--66
-\OT4/cmr/m/n/10 wys-t¦puje sªowo «az-izm"to bardzo praw-dopodob-nie strona ta n
-ie b¦dzie odpowied-
+Overfull \hbox (14.44514pt too wide) in paragraph at lines 66--67
+\OT4/cmr/m/n/10 wys-t¦puje sªowo,,nazizm'' to bardzo praw-dopodob-nie strona ta
+ nie b¦dzie odpowied-
  []
 
 [1
@@ -642,106 +641,129 @@ ie b¦dzie odpowied-
 {E:/MikTeX/texmfs/data/pdftex/config/pdftex.map}]
 
 LaTeX Warning: Citation `will_archer_arentz_classifying_nodate' on page 2 undef
-ined on input line 69.
+ined on input line 70.
 
 
 LaTeX Warning: Citation `radhouane_guermazi_combining_2007' on page 2 undefined
- on input line 69.
+ on input line 70.
 
 
 LaTeX Warning: Citation `giuseppe_amato_detection_2009' on page 2 undefined on 
-input line 69.
+input line 70.
 
 
 LaTeX Warning: Citation `mohammad_reza_mahmoodi_high_nodate' on page 2 undefine
-d on input line 69.
+d on input line 70.
 
 
 LaTeX Warning: Citation `jonathan_zittrain_internet_2003' on page 2 undefined o
-n input line 71.
+n input line 72.
 
 
 LaTeX Warning: Citation `piotr_luczuk_cyberwojna_2016' on page 2 undefined on i
-nput line 71.
+nput line 72.
 
 
 LaTeX Warning: Citation `j._postel_domain_1984' on page 2 undefined on input li
-ne 74.
+ne 75.
 
 
 LaTeX Warning: Citation `p._mockapetris_domain_1987' on page 2 undefined on inp
-ut line 74.
+ut line 75.
 
 
-Underfull \vbox (badness 3168) has occurred while \output is active []
+LaTeX Warning: Citation `p._mockapetris_domain2_1987' on page 2 undefined on in
+put line 75.
+
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 77.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 77.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 77.
+
+Underfull \vbox (badness 5563) has occurred while \output is active []
 
  [2]
-
-! Package Listings Error: File `c(.c)' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: c)
-
-Enter file name: 
-! Undefined control sequence.
-\\lst@inputlisting ...}}\reserved@a }\lst@doendpe 
-                                                  \@newlistfalse \ignorespaces 
-l.105 \lstinputlisting[language=c]{c.c}
-                                       
-? 
-
-Overfull \hbox (99.00452pt too wide) in paragraph at lines 108--109
-[][][][][][][][][][][][][][][][][] 
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 98--99
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 112.
+
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 99--100
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 108.
 
 (E:\MikTeX\texmfs\install\tex\latex\base\omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
 
-Overfull \hbox (39.0039pt too wide) in paragraph at lines 113--114
-[][][][][][][][][][][][][][][][][] 
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 112--113
+[][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 116--117
-[][][][][][][][][][][][][][][][] 
- []
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 
+      
+? 
+
+LaTeX Warning: Citation `donald_e._knuth_art_2002' on page 3 undefined on input
+ line 120.
 
 [3]
-Overfull \hbox (11.13945pt too wide) in paragraph at lines 155--156
+Overfull \hbox (25.83492pt too wide) in paragraph at lines 122--123
+\OT4/cmr/m/n/10 i-zowanej strony in-ter-ne-towej \OT4/cmr/m/it/10 anal-ysed-Pag
+e \OT4/cmr/m/n/10 pod k¡tem wys-t¦powa-nia lub podobie«stwa
+ []
+
+
+Overfull \hbox (5.06079pt too wide) in paragraph at lines 124--125
+[]\OT4/cmr/m/n/10 aktualizujemy wagi naszego klasy-fika-tora w klasie \OT4/cmr/
+m/it/10 Red-Flag-Phrase-Dic-tionary
+ []
+
+[4]
+Overfull \hbox (11.13945pt too wide) in paragraph at lines 154--155
 []\OT4/cmr/m/n/10 Drugi moduª b¦dzie posi-adaª kluc-zowe znacze-nie ze wzgl¦du 
 na prze-chowywanie
  []
 
-[4]
-Overfull \hbox (1.00067pt too wide) in paragraph at lines 163--164
+
+Overfull \hbox (1.00067pt too wide) in paragraph at lines 162--163
 \OT4/cmr/m/n/10 na bazy danych stron in-ter-ne-towych nale»¡-cych do odpowied-n
 iej kat-e-gorii (grupy
  []
 
 
-Overfull \hbox (16.38623pt too wide) in paragraph at lines 165--165
+Overfull \hbox (16.38623pt too wide) in paragraph at lines 164--164
 []\OT4/cmr/bx/n/14.4 Zastosowanie Klasy-fika-tora Stron In-ter-ne-towych 
  []
 
 
-Overfull \hbox (7.33395pt too wide) in paragraph at lines 167--168
+Overfull \hbox (7.33395pt too wide) in paragraph at lines 166--167
 []\OT4/cmr/m/n/10 Pierwszym oczy-wistym miejscem za-s-tosowa-nia klasy-fika-tor
 a b¦dzie ±rodowisko
  []
 
 
-Overfull \hbox (4.41727pt too wide) in paragraph at lines 167--168
+Overfull \hbox (4.41727pt too wide) in paragraph at lines 166--167
 \OT4/cmr/m/n/10 gdzie ów klasy-fika-tor speªni swoj¡ rol¦ jest ±rodowisko pracy
  lub wszelkie placówki
  []
 
+[5]
 No file ksi.bbl.
-[5] (ksi.aux)
+[6] (ksi.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -750,31 +772,30 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4472 strings out of 495204
- 56582 string characters out of 3181830
- 131001 words of memory out of 3000000
- 7703 multiletter control sequences out of 15000+200000
+ 4478 strings out of 495204
+ 56664 string characters out of 3181830
+ 131003 words of memory out of 3000000
+ 7711 multiletter control sequences out of 15000+200000
  14248 words of font info for 45 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 27i,6n,32p,1129b,1211s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,42p,1127b,1296s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/MikTeX/texmfs/install/fonts/enc/dvips/pl/plsc.enc}{E:/MikTeX/texmfs/insta
 ll/fonts/enc/dvips/pl/plms.enc}{E:/MikTeX/texmfs/install/fonts/enc/dvips/pl/plm
 i.enc}{E:/MikTeX/texmfs/install/fonts/enc/dvips/pl/plrm.enc}{E:/MikTeX/texmfs/i
 nstall/fonts/enc/dvips/pl/plit.enc}{E:/MikTeX/texmfs/install/fonts/enc/dvips/pl
-/pltt.enc}<E:/MikTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><E
-:/MikTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/MikTeX/te
-xmfs/install/fonts/type1/public/pl/plbx10.pfb><E:/MikTeX/texmfs/install/fonts/t
-ype1/public/pl/plbx12.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plmi1
-0.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plmi7.pfb><E:/MikTeX/texm
-fs/install/fonts/type1/public/pl/plr10.pfb><E:/MikTeX/texmfs/install/fonts/type
-1/public/pl/plr12.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plr17.pfb
-><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plr5.pfb><E:/MikTeX/texmfs/ins
-tall/fonts/type1/public/pl/plr7.pfb><E:/MikTeX/texmfs/install/fonts/type1/publi
-c/pl/plsy10.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plti10.pfb><E:/
-MikTeX/texmfs/install/fonts/type1/public/pl/pltt12.pfb>
-Output written on ksi.pdf (5 pages, 126052 bytes).
+/pltt.enc}<E:/MikTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+E:/MikTeX/texmfs/install/fonts/type1/public/pl/plbx10.pfb><E:/MikTeX/texmfs/ins
+tall/fonts/type1/public/pl/plbx12.pfb><E:/MikTeX/texmfs/install/fonts/type1/pub
+lic/pl/plmi10.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plr10.pfb><E:
+/MikTeX/texmfs/install/fonts/type1/public/pl/plr12.pfb><E:/MikTeX/texmfs/instal
+l/fonts/type1/public/pl/plr17.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/
+pl/plr5.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/plr7.pfb><E:/MikTeX
+/texmfs/install/fonts/type1/public/pl/plsy10.pfb><E:/MikTeX/texmfs/install/font
+s/type1/public/pl/plti10.pfb><E:/MikTeX/texmfs/install/fonts/type1/public/pl/pl
+tt12.pfb>
+Output written on ksi.pdf (6 pages, 116479 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
