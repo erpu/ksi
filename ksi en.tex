@@ -1,4 +1,4 @@
-\documentclass[10pt,twoside,a4paper]{article}
+\documentclass[9pt,a4paper]{extarticle}
 
 %\usepackage{abstract}
 \usepackage{algpseudocode}
@@ -21,6 +21,7 @@
 \usepackage{latexsym}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{multicol}
 %\usepackage{graphicx} 
 	%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 	%\usepackage{hyperref}
@@ -58,11 +59,11 @@
 %\clearpage
 
 \section{Abstract}
-Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.
-Keywords:\\
+Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.\\
 \\
-\textit{Internet, classificator, classification, keywords with wage, Domain Names Server, DNS}
+Keywords: \textit{Internet, classificator, classification, keywords with wage, Domain Names Server, DNS}
 
+\begin{multicols}{2}
 \section{Introduction}
 Almost every indexed Internet web page can by classified using proper \textbf{keywords}. Analysing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases can tell the rule engine directly others can only guide for proper category. For example if on page exist word "nazism" there is a high probability that page is not appropriate for the fourteen years old or younger pearson. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for proper classification. Let's think about phrase "Adolf Hitler". There is still huge probability that web page contains text about nazism, but also can lead to page about Adolf Hitlers biography that can by suitable for high school students.
 
@@ -83,6 +84,9 @@ Another way of bypass this security feature is to manual replacing DNS server ad
 
 \section{Keywords wages update and datamining}
 
+\end{multicols}
+
+\clearpage 
 %\lstinputlisting[language=c]
 \lstdefinelanguage{csharp} {morekeywords={foreach, if, in, like}, sensitive=false, morecomment=[l]{//}, morecomment=[s]{/*}{*/}, morestring=[b]", }
 \lstset{
@@ -113,7 +117,7 @@ foreach (phrase in webPageTextContent)
 }
 \end{lstlisting}
 
-
+\begin{multicols}{2}
 
 \begin{enumerate}
 \item 
@@ -157,6 +161,7 @@ foreach (phrase in webPageTextContent)
 
 
 \bibliography{ksi}
+\end{multicols}
 
 
 

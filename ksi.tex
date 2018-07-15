@@ -1,4 +1,5 @@
-\documentclass[9pt,twoside,a4paper]{article}
+%\documentclass[8pt,twoside,a4paper]{article}
+\documentclass[9pt,a4paper]{extarticle}
 
 %\usepackage{abstract}
 \usepackage{algpseudocode}
@@ -18,10 +19,13 @@
 \usepackage{polski}
 \usepackage[nottoc,numbib]{tocbibind}
 
+%\usepackage{blindtext}
 \usepackage{cite}
 \usepackage{latexsym}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{multicol}
+
 %\usepackage{graphicx} 
 	%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 	%\usepackage{hyperref}
@@ -64,6 +68,7 @@
 Słowa kluczowe:
 \textit{Internet, klasyfikator, klasyfikacja, słowa kluczowe z wagą, serwer nazw, DNS}
 
+\begin{multicols}{2}
 \section{Wstęp}
 
 \indent Niemal każdą zaindeksowaną stronę w Internecie można znaleść w odpowiedniej wyszukiwarce za pomocą \textbf{słów kluczowych} (ang.\textbf{ keywords}). Z tego powodu istnieje możliwość sklasyfikowania strony internetowej za pomocą odpowiednich słów. Stąd stosunkowo jest łatwo odkreślić dla jakiego użytkownika Internetu przeznaczona jest dana strona internetowa.
@@ -91,7 +96,9 @@ Słowa kluczowe z wagą oprócz swojego znaczenia zapisanego w postaci słownej 
 Cechą języka naturalnego jest, że wciąż się rozwija. Tworzone są nowe słowa lub idiomy. Część słów wychodzi z obiegu stając się anachronizmami. Dlatego bardzo ważne jest aby słownik słów kluczowych i jego wagi były stale uaktualniane. W bazie danych klasyfikację stron Internetowych zaczynamy z zdefiniowanym słownikiem początkowym. Na jego podstawie możemy sklasyfikować część stron internetowych na podstawie, których możemy prowadzić dalszą ekstrakcję słów kluczowych. Cechą podobnych stron internetowych jest fakt, że używają podobnych słów kluczowych. Na tej podstawie można za pomocą odpowiedniego algorytmu ustalić aktualne wagi dla fraz wyszukiwania. O ile ustalenie wag jest czynnością stosunkowo prostą to już o wiele trudniejszym zadaniem jest wydobycie nowych fraz dla słownika klasyfikującego. Wymaga to zbudowania słownika słów oraz fraz występujących na każdej stronie wraz z ich liczebnością i porównać ten słownik z podobnymi stronami. Nie jest to zadanie trywialne i wymaga znacznych zasobów sprzętowych.
 
 Do rozważenia przedstawiam szkic algorytmu, który wymaga dalszej dyskusji i ulepszeń.[alg1] 
+\end{multicols}
 
+\clearpage 
 %\lstinputlisting[language=c]
 \lstdefinelanguage{csharp} {morekeywords={foreach, if, in, like}, sensitive=false, morecomment=[l]{//}, morecomment=[s]{/*}{*/}, morestring=[b]", }
 \lstset{
@@ -122,7 +129,7 @@ foreach (phrase in webPageTextContent)
 }
 \end{lstlisting}
 
-
+\begin{multicols}{2}
 Algroytm ten jest zapisany w języku podobnym do C\# z jedną różnicą. Brak w nim operatora like jaki możemy spotkać w językach 4 generacji jak na przykład SQL, ale możliwe jest jego zastąpienieza pomocą metody like(). Zaimplementować ją można na wiele różnych sposobów. Na przykład korzystając z algorytmu Soundex stworzonego przez Roberta Russella i Margaret Odell\cite{donald_e._knuth_art_2002}. Algorytm ten zwraca podobieństwo fonetyczne wyrazów w postaci 4-znakowego kodu okrelający odległość fonetyczne podobieństwo tych wyrazów.
 
 Idea algorytmu polega na przeanalizowaniu wszystkich fraz \textit{phrase} analizowanej strony internetowej \textit{analysedPage} pod kątem występowania lub podobieństwa z zbiorem słów będących czerwoną flagą \textit{redFlagPhraseDictionary} (linia 15). Gdy fraza jest podobna lub w szczególności ma taką samą wartość alfanumeryczną to:
@@ -189,7 +196,7 @@ Celem artykułu jest zaproponowanie nowej metody klasyfikacji stron internetowyc
 
 
 \bibliography{ksi}
-
+\end{multicols}
 
 
 \end{document}
