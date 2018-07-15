@@ -40,7 +40,7 @@
 \author{Piotr Wójcik\\
     PJA,\\
     Warszawa,
-    \texttt{piotr.wojcik@pja.edu.pl}}
+    \texttt{pwojcik@pja.edu.pl}}
 \date{\today}
 
 
@@ -54,7 +54,7 @@
 %\clearpage
 
 \section{Abstrakt}
-\indent Artykuł opisuje nową metodę przeszukiwania stron Internetowych w poszukiwaniu stron niebezpiecznych dla Internauty. Zastosowano tu słowa kluczowe z parametrem wagi w celu klasyfikacji a nawet cenzury dostępu do Internetu dzięki liście stron zablokowanych umieszczonych na przygotowanych serwerach DNS.\\
+\indent Artykuł opisuje propozycję nowej metodę przeszukiwania stron Internetowych w poszukiwaniu stron niebezpiecznych dla Internauty. Jest to na razie plan systemu, który wymaga zbudowania prototypu i zmierzenie jego potencjału. Zastosowano tutaj słowa kluczowe z dołączonym parametrem wagi w celu klasyfikacji a nawet cenzury dostępu do Internetu dzięki liście stron zablokowanych umieszczonych na przygotowanych serwerach DNS.\\
 \\
 Słowa kluczowe:
 \textit{Internet, klasyfikator, klasyfikacja, słowa kluczowe z wagą, DNS}
@@ -69,10 +69,10 @@ Rodzi się tu problem odpowiedniej klasyfikacji występujących słów kluczowyc
 
 Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuronowych, które dla przykładu rozpoznają nagość na zdjęciach i filmach\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. Technika wykrywania pokrycia ciała skórą w rozpoznawaniu nagości cieszy się popularnością i zdaje dobre wyniki\cite{mohammad_reza_mahmoodi_high_nodate}. Ta tematyka nie będzie poruszana w tym artykule.
 
-Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć.\cite{piotr_luczuk_cyberwojna_2016}
+Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć\cite{piotr_luczuk_cyberwojna_2016}.
 
 \section{DNS}
-Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987}
+Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS.\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997}
 
 Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby  \(3.4*10^{1038}\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
 
@@ -168,7 +168,7 @@ Pierwszym oczywistym miejscem zastosowania klasyfikatora będzie środowisko dom
 
 \section{Podsumowanie i plany na przyszłość}
 
-Celem tego artykułu jest zaproponowanie nowej metody klasyfikacji stron internetowych. Planem autora jest zbudowanie działającego systemu bazującego na tym artykule. Najważniejszym produktem tego systemu będą gotowe serwery DNS posiadające wpisy do odpowiednich, dopuszczony grup stron internetowych. Umożliwi to takie skonstruowanie serwerów DNS, dzięki którym komunikacja do stron z nieodpowiednią treścią będzie niemożliwa lub znacznie utrudniona.
+Celem artykułu jest zaproponowanie nowej metody klasyfikacji stron internetowych. Planem autora jest zbudowanie działającego systemu informatycznego bazującego na tym artykule. Najważniejszym produktem tego systemu będą gotowe serwery DNS posiadające wpisy do odpowiednich, niedopuszczony dla każdej grupy stron internetowych. Umożliwi to takie skonstruowanie serwerów DNS, dzięki którym komunikacja do stron z nieodpowiednią treścią będzie niemożliwa lub znacząco utrudniona.
 
 
 
