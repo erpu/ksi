@@ -37,9 +37,14 @@
 
 \title{Web Page Classification Information System  as\\ an information software system\\ reducing access to Internet resources\\ using keywords with wages}
 \author{Piotr Wojcik\\
-    PJA,\\
-    Warszawa,
-    \texttt{piotr.wojcik@pja.edu.pl}}
+    Polish-Japanese Academy,\\
+    Warsaw,\\
+    \texttt{piotr.wojcik@pja.edu.pl}\\
+\\
+    Krzysztof Stencel\\
+    Warsaw University,\\
+    Warsaw,\\
+    \texttt{}}
 \date{\today}
 
 
@@ -53,12 +58,26 @@
 %\clearpage
 
 \section{Abstract}
-Keywords:
-\textit{Internet, classificator, classification, keywords with wage, DNS}
+Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.
+Keywords:\\
+\\
+\textit{Internet, classificator, classification, keywords with wage, Domain Names Server, DNS}
 
 \section{Introduction}
+Almost every indexed Internet web page can by classified using proper \textbf{keywords}. Analysing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases can tell the rule engine directly others can only guide for proper category. For example if on page exist word "nazism" there is a high probability that page is not appropriate for the fourteen years old or younger pearson. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for proper classification. Let's think about phrase "Adolf Hitler". There is still huge probability that web page contains text about nazism, but also can lead to page about Adolf Hitlers biography that can by suitable for high school students.
+
+That face us to the important problem of proper phrases classification that appears on web pages. Let's think about word "breast", which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about "breast cancer" we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase "Adolf Hitler". We would named it \textbf{not direct rule}. This forces us to careful keywords grouping and establishing proper phrase wages to distinguish direct from non direct rules of comparison.
+
+Classification could be done by artificial neural networks which can distinguish pages with nudity on images or videos\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. This technique of finding percent of coverage of skin color is very popular and gives good results in Internet media classification\cite{mohammad_reza_mahmoodi_high_nodate}. However this topic will not be discussed in this article.
+
+There is other unpopular concept connected to this material and it is called Internet censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman article\cite{jonathan_zittrain_internet_2003}. However more and more none regime countries like Australia, Great Britain and United States of America are using this controversial technique. The main reason of this idea is to choose lesser of two evils principle when there comes to talk about safety of younger Internet users\cite{piotr_luczuk_cyberwojna_2016}.
 
 \section{DNS}
+The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names Servers DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997}.
+
+Of course there is a easy way to bypass this security feature and not search for domain name IP address by directly typing this number. This leads us to necessity to remember this addresses. In IP protocol version four we encounter to \({256}^{4}\) different numbers with it is huge number of potential addresses. But in upcoming IP protocol version six we could address unthinkable number \(3.4*10^{1038}\). In practice those numbers we should reduce by number of sub networks of addresses classes that not lead directly to web pages content.
+
+Another way of bypass this security feature is to manual replacing DNS server address in protecting computer but even this step requires administration privileges.
 	
 \section{Keywords with wages}
 
@@ -137,7 +156,7 @@ foreach (phrase in webPageTextContent)
 %At the begining we are going to focus on signals similar to those presented in Figure \ref{fig:eegsignal}.
 
 
-%\bibliography{ksi}
+\bibliography{ksi}
 
 
 
