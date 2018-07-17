@@ -5,6 +5,7 @@
 \usepackage{algorithm}
 \usepackage[english]{babel}
 \usepackage{amsmath}
+\usepackage{amssymb} 
 	%\usepackage{apacite}
 %\usepackage{apl}
 	%\usepackage[polski]{babelbib}
@@ -45,7 +46,7 @@
     Krzysztof Stencel\\
     Warsaw University,\\
     Warsaw,\\
-    \texttt{}}
+    \texttt{stecel@mimuw.edu.pl}}
 \date{\today}
 
 
@@ -74,15 +75,11 @@ Classification could be done by artificial neural networks which can distinguish
 There is other unpopular concept connected to this material and it is called Internet censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman article\cite{jonathan_zittrain_internet_2003}. However more and more none regime countries like Australia, Great Britain and United States of America are using this controversial technique. The main reason of this idea is to choose lesser of two evils principle when there comes to talk about safety of younger Internet users\cite{piotr_luczuk_cyberwojna_2016}.
 
 \section{DNS}
-The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names Servers DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997}.
+The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names Servers DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_domain_1999}.
 
 Of course there is a easy way to bypass this security feature and not search for domain name IP address by directly typing this number. This leads us to necessity to remember this addresses. In IP protocol version four we encounter to \({256}^{4}\) different numbers with it is huge number of potential addresses. But in upcoming IP protocol version six we could address unthinkable number \(3.4*10^{1038}\). In practice those numbers we should reduce by number of sub networks of addresses classes that not lead directly to web pages content.
 
 Another way of bypass this security feature is to manual replacing DNS server address in protecting computer but even this step requires administration privileges.
-	
-\section{Keywords with wages}
-
-\section{Keywords wages update and datamining}
 
 \end{multicols}
 
@@ -117,6 +114,19 @@ foreach (phrase in webPageTextContent)
 \end{lstlisting}
 
 \begin{multicols}{2}
+\section{Keywords with wages}
+Under the concept of \textbf{keywords with wage} are simple idea of extending semantic meaning of the word that are written for example with use of Latin alphabet letters by number value. For example word "sex" that may function as a verb it function also as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicates a little direct classification because having this one world we cannot decide with great probability if the page is safe so we might want to estimate it \textbf{dangerous factor} \(\omega\) as equal 0.6. Let's define \textbf{keyword with wage} \(K\) as:
+%\begin{math}
+$$
+K = \{a_1a_2a_3...a_n, \omega : a_n \in [A-Z], 
+$$
+$$
+n \in \mathbb{N}, \omega \in \textless0,1\textgreater\}.
+$$
+%\end{math} 
+The larger is dangerous factor \(\omega\) the more valuable is keyword because it is more efficient in classifying page as unsafe. In Red Flag Dictionaries described in algorithm [alg\ref{alg1}] we are expecting to include those keyword. 
+
+\section{Keywords wages update and searching for new valuable keywords}
 
 \begin{enumerate}
 \item 
@@ -125,20 +135,21 @@ foreach (phrase in webPageTextContent)
 \end{enumerate}
 
 \section{Web pages category}
-
+We may propose grouping of an Internet web pages in 12 different categories:
 \begin{itemize}
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
-\item 
+\item information pages,
+\item web databases,
+\item commercial pages (shops, e-business etc.),
+\item social networks,
+\item dating sites,
+\item erotic pages,
+\item pornographic pages,
+\item risk sites (for example online casinos),
+\item sites with hate speech,
+\item sites with illegal materials and
+\item sites with hate and violence.
 \end{itemize}
+This might be not a final list o World Wide Web categorization and maybe requires an extension. Because of context of this pages the best strategy to deal with classification is to use different dictionaries, parameters or even algorithms to more efficient score decision. In case of classify site as a unsafe proper description should be added to database for future analysis and performance issues.
 
 \section{Web Page Classification Information System modules}
 

@@ -49,7 +49,7 @@
     Krzysztof Stencel\\
     Uniwersytet Warszawski,\\
     Warszawa,\\
-    \texttt{@edu.pl}}
+    \texttt{stecel@mimuw.edu.pl}}
 \date{\today}
 
 
@@ -82,7 +82,7 @@ Można też przeprowadzić klasyfikację stron za pomocą sztucznych sieci neuro
 Co prawda wszelka cenzura w Internecie nie się za sobą kontrowersję\cite{jonathan_zittrain_internet_2003}. ale co raz więcej nie reżimowych państw korzysta z tej techniki jak Stany zjednoczone, Wielka Brytania i Australia. Jednym z powodów dlaczego państwa demokratyczne skłaniają się do mniejszego zła jakim jest ograniczanie dostępu do Internetu dla osób najmłodszych jest ilość niebezpieczeństw jakie może on tam znaleźć\cite{piotr_luczuk_cyberwojna_2016}.
 
 \section{DNS}
-Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997}.
+Najlepszą i za razem najbezpieczniejszą formą ograniczenia dostępu do odkrywania stron Internetowych jest zastosowanie odpowiednio przygotowanych serwerów Domain Name System DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_domain_1999}.
 
 Oczywiście bardzo łatwo można obejść to zabezpieczenie wpisując  bezpośrednio w przeglądarce numer strony w postaci adresu IP, ale trzeba wcześniej ten numer znać. Jeśli chodzi o sam numer to w adresie IP wersji czwartej mamy do czynienia z  \({256}^{4}\) ilością możliwych domen a przy adresie IP wersji 6 ta pojemność wzrasta do niewyobrażalnej liczby \(3.4*10^{1038}\). W praktyce liczba możliwych do zaadresowania stron internetowych jest niższa z powodu potrzeby uwzględnienia adresów różnych klas podsieci, które uniemożliwiają użycie niektórych adresów.
 
@@ -90,6 +90,8 @@ Drugim sposobem jest zamiana serwera DNS w chronionym komputerze, ale i ta opera
 	
 \section{Słowa kluczowe z wagą}
 %Temat słów kluczowych z wagą został poruszony wcześniej w artykule []. Opis słów kluczowych z wagą.
+Pod koncepcją słów kluczowych z wagą kryje się prosta idea rozszerzenie znaczenia słowa o wartoć liczbową, które możemy, ale nie musimy kojarzyć jako prawdopodobieństwo, że użyte w kontekcie danej strony identyfikuje ją jako niebezpieczną. Dla przykładu słowo sex, które oprócz bycia czasownikiem oznacza także płeć i co innego może oznaczać w internetowych bazach danych a co innego na pozostałych stronach, w szczególnosci kiedy występuje w tekcscie wielokrotnie. Niech dla przykładu początkową wagę ustalimy na 0.6 tworząc krotkę (,,sex'', 0.6). Od tej pory krotki K = {a_1a_2a_3...a_n, omega : n należy do Naturalnych, omega należy do <0,1>} będziemy definiować jako słowa kluczowe z wagą. Im większy parametr omega tym większe prawdopodobieństo, że dana strona jest niebezpieczna w zadanym kontekscie (patrz sekcja kategorie stron). W każdym przypadku będzimy dążyli do zbudowania słownika krotek K, dla których wartosć omega jest jak największa.
+
 Słowa kluczowe z wagą oprócz swojego znaczenia zapisanego w postaci słownej można rozszerzyć o krotkę posiadającą miarę istotności danego słowa w rozpatrywanym aktualnie algorytmie. Dla słowa ,,sex'' możemy nadać na przykład wartoć 0.6 tworząc krotkę (,,sex'', 0.6), która będzie wartością dla obiektu klasy WagedKeyword. Niech klasa ta zbudowana będzie z krotek, których pierwszym elementem będzie słowo w postaci ciągu znaków i wartością \(p\) taką, że \(p \in \langle 0,1\rangle\). Im większy jest podany parametr \textit{p} tym bardziej dane słowo jest brane pod uwagę podczas ustalenia iloci punktów danej strony i większe prawdopodobieństwo do zakfalifikowania danej strony jako niebezpieczną.
 
 \section{Ustalanie wag oraz wydobywanie nowych słów kluczowych}
@@ -129,7 +131,7 @@ foreach (phrase in webPageTextContent)
 \end{lstlisting}
 
 \begin{multicols}{2}
-Algroytm ten jest zapisany w języku podobnym do C\# z jedną różnicą. Brak w nim operatora like jaki możemy spotkać w językach 4 generacji jak na przykład SQL, ale możliwe jest jego zastąpienieza pomocą metody like(). Zaimplementować ją można na wiele różnych sposobów. Na przykład korzystając z algorytmu Soundex stworzonego przez Roberta Russella i Margaret Odell\cite{donald_e._knuth_art_2002}. Algorytm ten zwraca podobieństwo fonetyczne wyrazów w postaci 4-znakowego kodu okrelający odległość fonetyczne podobieństwo tych wyrazów.
+Algrorytm ten jest zapisany w języku podobnym do C\# z jedną różnicą. Brak w nim operatora like jaki możemy spotkać w językach 4 generacji jak na przykład SQL, ale możliwe jest jego zastąpienieza pomocą metody like(). Zaimplementować ją można na wiele różnych sposobów. Na przykład korzystając z algorytmu Soundex stworzonego przez Roberta Russella i Margaret Odell\cite{donald_e._knuth_art_2002}. Algorytm ten zwraca podobieństwo fonetyczne wyrazów w postaci 4-znakowego kodu okrelający odległość fonetyczne podobieństwo tych wyrazów.
 
 Idea algorytmu polega na przeanalizowaniu wszystkich fraz \textit{phrase} analizowanej strony internetowej \textit{analysedPage} pod kątem występowania lub podobieństwa z zbiorem słów będących czerwoną flagą \textit{redFlagPhraseDictionary} (linia 15). Gdy fraza jest podobna lub w szczególności ma taką samą wartość alfanumeryczną to:
 \begin{enumerate}
