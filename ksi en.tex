@@ -127,12 +127,18 @@ $$
 The larger is dangerous factor \(\omega\) the more valuable is keyword because it is more efficient in classifying page as unsafe. In Red Flag Dictionaries described in algorithm [alg\ref{alg1}] we are expecting to include those keyword. 
 
 \section{Keywords wages update and searching for new valuable keywords}
+One of the characteristic of language is that he is dynamically changing and changing over the years.  More and more words are appearing. Some of them are become obsolete. This rises issue to constantly update a dictionary and wages of dangerous factor. Other fact is that similar pages use similar phrases in content. Traversing base set of pages can provides as not only an updated of wages but also can give us new set of phrases. In search of new phrases is applied more complex process than updating dangerous factor in existing set of keywords.
 
+For the brief understanding of dynamic update dangerous factor parameter and classification of Internet pages I present simple algorithm [Alg1] for future analysis and implementation. Above code is implemented in C\# like language. The only not compatible feature is an \textbf{like} keyword that is not implemented in that language. This function is implemented in 4GL languages like SQL and can be easily replaced by calling method like. The body of this method may for example contain Soundex algorithm created by Robert Russell and Margaret Odell\cite{donald_e._knuth_art_2002}. The result of this algorithm is four-digit code containing information about phonetic similarity of two words.
+
+Idea of this algorithm depends on analysis of all \textit{phrases} on given Internet page \textit{analysedPage} to find any similarities 
+with keywords in set \textit{redFlagPhraseDictionary} (line 15) called \textbf{red flag phrases}. If phrase is similar or identical then:
 \begin{enumerate}
-\item 
-\item 
-\item 
+\item update all dangerous factor parameters in \textit{RedFlagPhraseDictionary} classification set and update the ranking static class \textit{MostCompromisedPages} (line 18),
+\item sum up the \textit{score} for this page (line 19),
+\item attach this page to list of compromised pages (line 20).
 \end{enumerate}
+On the line 12 we are setting up the top list of the most compromised pages \textit{compromisedWebPages.top()} as a source included in every iteration for this algorithm.
 
 \section{Web pages category}
 We may propose grouping of an Internet web pages in 12 different categories:
