@@ -165,11 +165,11 @@ Klasyfikator Stron Internetowych w skrócie KSI (ang. Web Page Classification In
 
 Pierwszym modułem będzie baza danych stron nieprzetworzonych lub wstępnie przetworzonych. Zawierać będzie ona graf reprezentujący odkrytą część Internetu wraz z jej odpowiednim kolorem. Kolor określać będzie stronę nieprzejrzaną, przejrzaną wstępnie przez jeden z początkujących algorytmów, stronę w pełni sklasyfikowaną i stronę przetworzoną wraz z jej dalszymi odnośnikami. Strona sklasyfikowana należała będzie do odpowiedniej kategorii wraz z uzasadnieniem, które określi na podstawie, których najważniejszych słów kluczowych została oceniona w raz z ich liczebnością.
 
-Drugi moduł będzie posiadał kluczowe znaczenie ze względu na przechowywanie słownika klasyfikujących słów kluczowych wraz z ich wagami. Baza ta w toku działania algorytmów będzie bardzo często uaktualniania oraz będzie stanowiła serce dynamicznego systemu ocen KSI. Bardzo ważne tu będzie przechowywanie perspektyw, które będą opisywały datę aktualnego algorytmu klasyfikującymi wraz z używanymi wagami oraz informację do jakiej kategorii klasyfikuje frazę.
+Drugi moduł będzie posiadał kluczowe znaczenie ze względu na przechowywanie słownika klasyfikujących słów kluczowych wraz z ich wagami. Baza ta w toku działania algorytmów będzie bardzo często uaktualniania oraz będzie stanowiła serce dynamicznego systemu ocen KSI. Bardzo ważne tu będzie przechowywanie perspektyw, które będą opisywały datę aktualnego algorytmu klasyfikującymi wraz z używanymi wagami oraz informację do jakiej kategorii klasyfikuje frazę. Może zdarzyć się, że dana fraza będzie użyteczna dla więcej niż jednego algorytmu.
 
 Trzeci moduł to moduł określający wagi słów kluczowych. Jego zadaniem będzie ciągła aktualizacja wag słów kluczowych na podstawie przetworzonych słów z sklasyfikowanych stron internetowych.
 
-Czwarty moduł to baza danych, na której głównie będą dopisywane już przetworzone strony wraz z ich klasyfikacją oraz uzasadnieniem. W pewnych przypadkach klasyfikacja strony może ulec zmianie stąd istnieje potrzeba zapewnienia tej strony ciągłej możliwości aktualizacji danych. Jest to bardzo ważny element systemu, ponieważ jest to moduł na podstawie, którego będzie budowany serwer DNS systemu.
+Czwarty moduł to baza danych, na której głównie będą dopisywane już przetworzone strony wraz z ich klasyfikacją oraz uzasadnieniem. W pewnych przypadkach klasyfikacja strony może ulec zmianie stąd istnieje potrzeba zapewnienia tej stronie ciągłej możliwości aktualizacji danych. Jest to bardzo ważny element systemu, ponieważ jest to moduł na podstawie, którego będzie budowany serwer DNS systemu.
 
 Piąty oraz najtrudniejszy do zaimplementowania jest moduł prowadzący ekstrakcję nowych słów kluczowych.
 

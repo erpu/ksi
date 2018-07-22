@@ -158,11 +158,25 @@ We may propose grouping of an Internet web pages in 12 different categories:
 This might be not a final list o World Wide Web categorization and maybe requires an extension. Because of context of this pages the best strategy to deal with classification is to use different dictionaries, parameters or even algorithms to more efficient score decision. In case of classify site as a unsafe proper description should be added to database for future analysis and performance issues.
 
 \section{Web Page Classification Information System modules}
+The Web Page Classification Information System WPCIS is going to be build with several databases and use several different algorithms to process information.
+
+First module contains database with all discovered Internet Pages that going to be process, was visited by one or many different classification algorithm, classified page or fully classified page with all external link processed. In case of classified or fully classified page description will be attached containing information which keywords was used to compute score of this page, the value of dangerous factor parameters used to make such index and phrases enumeration on this pages.
+
+Second module are going to be build with much smaller database which contains perspectives of actual and used in the past sets of dictionaries of phrases with wages. Each perspective are going to have date of introduction, version number and used dictionary values and may be withdraw at any time in case of new parameters introduction. This database is a heart of system and going to be heavily updated by processing program.
+
+Third, the smallest but important module is a program containing the algorithm to compute dangerous factor parameters for red flag phrases.
+
+Fourth important module is a creator and updater of DNS server which use base of first module data. In some cases classification of pages could change so it is important to give this change possibility for DNS records.
+
+Fifth the most complicated and resource consumer module is data-mining program that extracts new phrases for red flag dictionary algorithms.
+
+Of course this system is going to grow in time and some modules are going to be divided with smaller components with more specialized features like four module that going to be divided with base for different DNS servers grouped by different pages categories described in section Web pages category.
 
 \section{Web Page Classification Information System appliance}
+First and the most obvious appliance of this classifier is home environment where young children and adolescent requires safe Internet access. Second also important place to use this system is in work environment and educational places where it is important to provide reduced access to some Internet resources.
 
 \section{Conclusion and future plans}
-
+The reason of this article appearance is to project new classification method. In near future new system are going to be implemented. The most important product of this program is to create plenty of DNS servers containing records of censured web domains according to the outcome of various classification algorithms. This DNS systems when applied to endpoint computers are going to greatly reduce access to unsafe or prohibited web resources.
 
 
 %\begin{figure}
