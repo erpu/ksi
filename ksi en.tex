@@ -37,7 +37,7 @@
 
 	%\setlength{\parindent}{3pt}
 
-\title{Web Page Classification Information System  as\\ an information software system\\ reducing access to Internet resources\\ using keywords with wages}
+\title{Web Page Classifier Information System\\ as an information software system\\ reducing Internet access\\ using keywords with wages}
 \author{Piotr Wojcik\\
     Polish-Japanese Academy,\\
     Warsaw,\\
@@ -62,7 +62,7 @@
 \section{Abstract}
 Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.\\
 \\
-Keywords: \textit{Internet, classificator, classification, keywords with wage, Domain Names Server, DNS}
+Keywords: \textit{Internet, classificator, classification, keywords with wage, Domain Names System, DNS}
 
 \begin{multicols}{2}
 \section{Introduction}
@@ -75,11 +75,11 @@ Classification could be done by artificial neural networks which can distinguish
 There is other unpopular concept connected to this material and it is called Internet censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman article\cite{jonathan_zittrain_internet_2003}. However more and more none regime countries like Australia, Great Britain and United States of America are using this controversial technique. The main reason of this idea is to choose lesser of two evils principle when there comes to talk about safety of younger Internet users\cite{piotr_luczuk_cyberwojna_2016}.
 
 \section{DNS}
-The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names Servers DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_domain_1999}.
+The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names System DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_domain_1999}.
 
 Of course there is a easy way to bypass this security feature and not search for domain name IP address by directly typing this number. This leads us to necessity to remember this addresses. In IP protocol version four we encounter to \({256}^{4}\) different numbers with it is huge number of potential addresses. But in upcoming IP protocol version six we could address unthinkable number \(3.4*10^{1038}\). In practice those numbers we should reduce by number of sub networks of addresses classes that not lead directly to web pages content.
 
-Another way of bypass this security feature is to manual replacing DNS server address in protecting computer but even this step requires administration privileges.
+Another way of bypass this security feature is to manual replacing DNS server address in protected computer but even this step requires administration privileges.
 
 \end{multicols}
 
@@ -88,7 +88,7 @@ Another way of bypass this security feature is to manual replacing DNS server ad
 \lstset{
 numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
 }
-\begin{lstlisting}[title={Alg 1. Podstawowy algorytm klasyfikacji stron internetowych}, language=csharp, label=alg1] 
+\begin{lstlisting}[title={Alg 1. The basic Internet web page classifier algorithm}, language=csharp, label=alg1] 
 
 //input: 
 //    phrase - analysed phrase, 
@@ -127,9 +127,9 @@ $$
 The larger is dangerous factor \(\omega\) the more valuable is keyword because it is more efficient in classifying page as unsafe. In Red Flag Dictionaries described in algorithm [alg\ref{alg1}] we are expecting to include those keyword. 
 
 \section{Keywords wages update and searching for new valuable keywords}
-One of the characteristic of language is that he is dynamically changing and changing over the years.  More and more words are appearing. Some of them are become obsolete. This rises issue to constantly update a dictionary and wages of dangerous factor. Other fact is that similar pages use similar phrases in content. Traversing base set of pages can provides as not only an updated of wages but also can give us new set of phrases. In search of new phrases is applied more complex process than updating dangerous factor in existing set of keywords.
+One of the characteristic of language is that it is dynamically changing and changing over the years.  More and more words are appearing. Some of them are become obsolete. This rises issue to constantly update a dictionary and wages of dangerous factor. Other fact is that similar pages use similar phrases in content. Traversing base set of pages can provides as not only an updated of wages but also can give us new set of phrases. In search of new phrases is applied more complex process than updating dangerous factor in existing set of keywords.
 
-For the brief understanding of dynamic update dangerous factor parameter and classification of Internet pages I present simple algorithm [Alg1] for future analysis and implementation. Above code is implemented in C\# like language. The only not compatible feature is an \textbf{like} keyword that is not implemented in that language. This function is implemented in 4GL languages like SQL and can be easily replaced by calling method like. The body of this method may for example contain Soundex algorithm created by Robert Russell and Margaret Odell\cite{donald_e._knuth_art_2002}. The result of this algorithm is four-digit code containing information about phonetic similarity of two words.
+For the brief understanding of dynamic update dangerous factor parameter and classification of Internet pages I present simple algorithm [Alg1] for future analysis and implementation. Above code is implemented in C\# like language. The only not compatible feature is an \textbf{like} keyword that is not implemented in that language. This function is implemented in 4GL languages like SQL and can be easily replaced by calling method \textit{like()}. The body of this function may for example contain \textit{Soundex} algorithm created by Robert Russell and Margaret Odell\cite{donald_e._knuth_art_2002}. The result of this algorithm is four-digit code containing information about phonetic similarity of two words.
 
 Idea of this algorithm depends on analysis of all \textit{phrases} on given Internet page \textit{analysedPage} to find any similarities 
 with keywords in set \textit{redFlagPhraseDictionary} (line 15) called \textbf{red flag phrases}. If phrase is similar or identical then:
@@ -176,7 +176,7 @@ Of course this system is going to grow in time and some modules are going to be 
 First and the most obvious appliance of this classifier is home environment where young children and adolescent requires safe Internet access. Second also important place to use this system is in work environment and educational places where it is important to provide reduced access to some Internet resources.
 
 \section{Conclusion and future plans}
-The reason of this article appearance is to project new classification method. In near future new system are going to be implemented. The most important product of this program is to create plenty of DNS servers containing records of censured web domains according to the outcome of various classification algorithms. This DNS systems when applied to endpoint computers are going to greatly reduce access to unsafe or prohibited web resources.
+The reason of this article appearance is to design new classification method. In near future new system are going to be implemented. The most important product of this program is to create plenty of DNS servers containing records of censured web domains according to the outcome of various classification algorithms. This DNS systems when applied to endpoint computers are going to greatly reduce access to unsafe or prohibited web resources.
 
 
 %\begin{figure}
