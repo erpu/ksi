@@ -38,7 +38,7 @@
 	%\setlength{\parindent}{3pt}
 
 \title{Web Page Classifier Information System\\ as an information software system\\ reducing Internet access\\ using keywords with wages}
-\author{Piotr Wojcik\\
+\author{Piotr W\'{o}jcik\\
     Polish-Japanese Academy,\\
     Warsaw,\\
     \texttt{pwojcik@pja.edu.pl}\\
@@ -46,7 +46,7 @@
     Krzysztof Stencel\\
     Warsaw University,\\
     Warsaw,\\
-    \texttt{stecel@mimuw.edu.pl}}
+    \texttt{stencel@mimuw.edu.pl}}
 \date{\today}
 
 
@@ -60,17 +60,26 @@
 %\clearpage
 
 \section{Abstract}
-Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.\\
+This article describes a proposal of a new method to scan Internet resources for pages that are unsafe for selected Internet users. 
+Currently, it is only a plan for a prototype that will be evaluated for performance and usability. 
+The method uses the concept of weighted keywords to classify and then even censor web pages.
+The system will block selected Internet web pages by dynamically updating Domain Names Servers.\\
 \\
-Keywords: \textit{Internet, classificator, classification, keywords with wage, Domain Names System, DNS}
+Keywords: \textit{Internet, classifier, classification, keywords with wage, Domain Names System, DNS}
 
 \begin{multicols}{2}
 \section{Introduction}
-Almost every indexed Internet web page can by classified using proper \textbf{keywords}. Analysing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases can tell the rule engine directly others can only guide for proper category. For example if on page exist word "nazism" there is a high probability that page is not appropriate for the fourteen years old or younger person. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for proper classification. Let's think about phrase "Adolf Hitler". There is still huge probability that web page contains text about nazism, but also can lead to page about Adolf Hitlers biography that can by suitable for high school students.
+Almost every indexed Internet web page can by classified using proper \textbf{keywords}. Analysing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases can tell the rule engine directly others can only guide for proper category. For example if on page exist word ``nazism'' there is a high probability that page is not appropriate for the fourteen years old or younger person. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for proper classification. 
+Let us consider the phrase ``Adolf Hitler''. 
+There is still huge probability that web page contains text about nazism, but also can lead to page about Adolf Hitler's biography that can by suitable for high school students.
 
-That face us to the important problem of proper phrases classification that appears on web pages. Let's think about word "breast", which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about "breast cancer" we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase "Adolf Hitler". We would named it \textbf{not direct rule}. This forces us to careful keywords grouping and establishing proper phrase wages to distinguish direct from non direct rules of comparison.
+That face us to the important problem of proper phrases classification that appears on web pages. 
+Let us think about
+word ``breast'', which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about
+``breaast cancer'' we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase
+``Adolf Hitler''. We would named it \textbf{not direct rule}. This forces us to careful keywords grouping and establishing proper phrase wages to distinguish direct from non direct rules of comparison.
 
-Classification could be done by artificial neural networks which can distinguish pages with nudity on images or videos\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. This technique of finding percent of coverage of skin color is very popular and gives good results in Internet media classification\cite{mohammad_reza_mahmoodi_high_nodate,paul_greenfield_netalert_2001}. However this topic will not be discussed in this article.
+Classification could be done by artificial neural networks which can distinguish pages with nudity on images or videos\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. This technique of finding percent of coverage of skin colour is very popular and gives good results in Internet media classification\cite{mohammad_reza_mahmoodi_high_nodate,paul_greenfield_netalert_2001}. However this topic will not be discussed in this article.
 
 There is other unpopular concept connected to this material and it is called Internet censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman article\cite{jonathan_zittrain_internet_2003}. However more and more none regime countries like Australia, Great Britain and United States of America are using this controversial technique. The main reason of this idea is to choose lesser of two evils principle when there comes to talk about safety of younger Internet users\cite{piotr_luczuk_cyberwojna_2016,john_g._palfrey_jr._four_2010}.
 
@@ -93,12 +102,12 @@ numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
 //input: 
 //    phrase - analysed phrase, 
 //    analysedPage - web page with URL and other characteristics, 
-//    compromisedWebPages - colection of compromised web pages, 
-//    redFlagPhraseDictionary - colection of phrases 
+//    compromisedWebPages - collection of compromised web pages, 
+//    redFlagPhraseDictionary - collection of phrases 
 //                              that compromise web page
 //output:
 //    score - points of page classification
-//    compromisedWebPages - modyfied input object
+//    compromisedWebPages - modified input object
 
 mostCompromisedPages = compromisedWebPages.top();
 foreach (phrase in webPageTextContent)
@@ -115,7 +124,8 @@ foreach (phrase in webPageTextContent)
 
 \begin{multicols}{2}
 \section{Keywords with wages}
-Under the concept of \textbf{keywords with wage} are simple idea of extending semantic meaning of the word that are written for example with use of Latin alphabet letters by number value. For example word "sex" that may function as a verb it function also as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicates a little direct classification because having this one world we cannot decide with great probability if the page is safe so we might want to estimate it \textbf{dangerous factor} \(\omega\) as equal 0.6. Let's define \textbf{keyword with wage} \(K\) as:
+Under the concept of \textbf{keywords with wage} are simple idea of extending semantic meaning of the word that are written for example with use of Latin alphabet letters by number value. For example word
+``sex'' that may function as a verb it function also as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicates a little direct classification because having this one world we cannot decide with great probability if the page is safe so we might want to estimate it \textbf{dangerous factor} \(\omega\) as equal 0.6. Let's define \textbf{keyword with wage} \(K\) as:
 %\begin{math}
 $$
 K = \{a_1a_2a_3...a_n, \omega : a_n \in [A-Z], 
@@ -197,3 +207,4 @@ The reason of this article appearance is to design new classification method. In
 
 
 \end{document}
+
