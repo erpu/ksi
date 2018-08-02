@@ -37,50 +37,45 @@
 
 	%\setlength{\parindent}{3pt}
 
-\title{Web Page Classifier Information System\\ as an information software system\\ reducing Internet access\\ using keywords with wages}
-\author{Piotr Wojcik\\
+\title{Web Page Classifier Information System\\ as an information software system\\ reducing Internet access\\ by usage of keywords\\ related with 'weight'.}
+\author{Piotr W\'{o}jcik\\
     Polish-Japanese Academy,\\
     Warsaw,\\
-    \texttt{pwojcik@pja.edu.pl}\\
-\\
-    Krzysztof Stencel\\
-    Warsaw University,\\
-    Warsaw,\\
-    \texttt{stecel@mimuw.edu.pl}}
+    \texttt{pwojcik@pja.edu.pl}
+}
 \date{\today}
 
 
 \begin{document}
-%\frenchspacing
+
 \maketitle
 \bibliographystyle{plunsrt}
-%\cleardoublepage
-
-%\tableofcontents
-%\clearpage
 
 \section{Abstract}
-Article describes proposition of new method of scanning Internet resources to find unsafe web pages for Internet users. Actual it is only an plan for the prototype that needs to be measured for his performance and usability. It is using concept of keywords with wages to classify or even selected censorship access to Internet thanks to list of blocked Internet web pages on dynamic updating Domain Names Servers.\\
+This article describes a proposal of a new method to scan Internet resources for pages that are unsafe for selected Internet users. 
+Currently, it is a plan for a prototype that will be evaluated for performance and usability. 
+The method uses the concept of weighted keywords to classify and then even censor web pages.
+The system will block selected Internet web pages by updating Domain Names System.\\
 \\
-Keywords: \textit{Internet, classificator, classification, keywords with wage, Domain Names System, DNS}
+Keywords: \textit{Internet, classifier, classification, keywords with wage, Domain Names System, DNS}
 
 \begin{multicols}{2}
 \section{Introduction}
-Almost every indexed Internet web page can by classified using proper \textbf{keywords}. Analysing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases can tell the rule engine directly others can only guide for proper category. For example if on page exist word "nazism" there is a high probability that page is not appropriate for the fourteen years old or younger person. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for proper classification. Let's think about phrase "Adolf Hitler". There is still huge probability that web page contains text about nazism, but also can lead to page about Adolf Hitlers biography that can by suitable for high school students.
+Almost every indexed related to web page can be classified by usage of particular \textbf{keywords}. Analysing appearance of this keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases sets can tell the rule engine directly, others can only guide for proper category. For instance if on page appear word ``Nazism'' there is a high probability that page is not appropriate for the fourteen year olds or youngers. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for adequate classification. Let's think about phrase ``Adolf Hitle''r. There is still huge probability that web page contains text about Nazism, but also can lead to page about Adolf Hitlers biography that can be  suitable for high school students.
 
-That face us to the important problem of proper phrases classification that appears on web pages. Let's think about word "breast", which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about "breast cancer" we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase "Adolf Hitler". We would named it \textbf{not direct rule}. This forces us to careful keywords grouping and establishing proper phrase wages to distinguish direct from non direct rules of comparison.
+This leave us with important problem, dysfunction of proper phrases classification that appears on web pages. Let's think about word ``breast'', which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about ``breast cancer'' we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase ``Adolf Hitler''. We would call it \textbf{not direct rule}. This forces us to careful selection of keywords like proper phrase weight to distinguish direct form of non direct rules of comparison.
 
-Classification could be done by artificial neural networks which can distinguish pages with nudity on images or videos\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. This technique of finding percent of coverage of skin color is very popular and gives good results in Internet media classification\cite{mohammad_reza_mahmoodi_high_nodate,paul_greenfield_netalert_2001}. However this topic will not be discussed in this article.
+Classification could be done by artificial neural networks which can distinguish pages with nudity on images or videos\cite{will_archer_arentz_classifying_nodate, radhouane_guermazi_combining_2007, giuseppe_amato_detection_2009}. The technique of image extraction and accurate skin detection from web pages is very popular and gives good results in Internet media classification\cite{mohammad_reza_mahmoodi_high_nodate,paul_greenfield_netalert_2001} but in this article I won't focus on that topic. 
 
-There is other unpopular concept connected to this material and it is called Internet censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman article\cite{jonathan_zittrain_internet_2003}. However more and more none regime countries like Australia, Great Britain and United States of America are using this controversial technique. The main reason of this idea is to choose lesser of two evils principle when there comes to talk about safety of younger Internet users\cite{piotr_luczuk_cyberwojna_2016,john_g._palfrey_jr._four_2010}.
+On the other hand there is unpopular concept connected to this material and  is called Internet Censorship. It was discussed in Jonathan Zittrain, Benjamin Edelman\cite{jonathan_zittrain_internet_2003} none regime countries like Australia, Great Britain and United States of America are constantly using this controversial technique. The main reason of this idea is to choose lesser of two evils which principle comes down to safety of young Internet surfers\cite{piotr_luczuk_cyberwojna_2016,john_g._palfrey_jr._four_2010}.
 
 \section{DNS}
-The best and also the most safe form to limit access to discover world wide web pages is to prepare appropriate Domain Names System DNS\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_3rd_domain_1997}. This technique discussed in this article is called \textbf{Exclusion Filtering}\cite{paul_greenfield_netalert_2001}.
+The best as well as the most safe way to limit access to web pages is basicly to prepare appropriate Domain Name System - DNS.
+\cite{j._postel_domain_1984, p._mockapetris_domain_1987, p._mockapetris_domain2_1987, yakov_rekhter_dynamic_1997, r._elz_clarifications_1997, d._eastlake_3rd_domain_1997}. Technique discussed in this article is called \textbf{the Exclusion Filtering}\cite{paul_greenfield_netalert_2001}.
 
-Of course there is a easy way to bypass this security feature and not search for domain name IP address by directly typing this number. This leads us to necessity to remember this addresses. In IP protocol version four we encounter to \({256}^{4}\) different numbers with it is huge number of potential addresses. But in upcoming IP protocol version six we could address unthinkable number \(3.4*10^{1038}\). In practice those numbers we should reduce by number of sub networks of addresses classes that not lead directly to web pages content.
+Of course there is an easy way to bypass all this security features and simply not search for domain name IP address by directly typing this number. This leads us to necessity of  remembering that  addresses. In IP protocol version four we encounter to \({256}^{4}\) different numbers which  is huge number of potential addresses but in upcoming IP protocol version six we could address unthinkable number \(3.4*10^{1038}\). In practice those big numbers we should reduce by number of sub networks of address classes that not lead directly to web page.
 
-Another way of bypass this security feature is to manual replacing DNS server address in protected computer but even this step requires administration privileges.
-
+Another way of bypass this security feature is to manually replacing DNS server address in the protected computer but even this step requires administrative privileges.
 \end{multicols}
 
 %\lstinputlisting[language=c]
@@ -93,12 +88,12 @@ numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt
 //input: 
 //    phrase - analysed phrase, 
 //    analysedPage - web page with URL and other characteristics, 
-//    compromisedWebPages - colection of compromised web pages, 
-//    redFlagPhraseDictionary - colection of phrases 
+//    compromisedWebPages - collection of compromised web pages, 
+//    redFlagPhraseDictionary - collection of phrases 
 //                              that compromise web page
 //output:
 //    score - points of page classification
-//    compromisedWebPages - modyfied input object
+//    compromisedWebPages - modified input object
 
 mostCompromisedPages = compromisedWebPages.top();
 foreach (phrase in webPageTextContent)
@@ -115,7 +110,8 @@ foreach (phrase in webPageTextContent)
 
 \begin{multicols}{2}
 \section{Keywords with wages}
-Under the concept of \textbf{keywords with wage} are simple idea of extending semantic meaning of the word that are written for example with use of Latin alphabet letters by number value. For example word "sex" that may function as a verb it function also as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicates a little direct classification because having this one world we cannot decide with great probability if the page is safe so we might want to estimate it \textbf{dangerous factor} \(\omega\) as equal 0.6. Let's define \textbf{keyword with wage} \(K\) as:
+Under the concept of \textbf{keywords with wage} are simple idea of extending semantic meaning of the word that are written for example with use of Latin alphabet letters by number value. For example word
+``sex'' that may function as a verb it function also as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicates a little direct classification because having this one world we cannot decide with great probability if the page is safe so we might want to estimate it \textbf{dangerous factor} \(\omega\) as equal 0.6. Let's define \textbf{keyword with wage} \(K\) as:
 %\begin{math}
 $$
 K = \{a_1a_2a_3...a_n, \omega : a_n \in [A-Z], 
@@ -197,3 +193,4 @@ The reason of this article appearance is to design new classification method. In
 
 
 \end{document}
+
