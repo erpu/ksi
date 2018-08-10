@@ -61,7 +61,7 @@ Keywords: \textit{Internet, classifier, classification, keywords with wage, Doma
 
 \begin{multicols}{2}
 \section{Introduction}
-Almost every indexed related to web page can be classified by usage of particular \textbf{keywords}. Analysing appearance of this keywords used on page known also as \textbf{search phrase} can tell about age requirements of Internet surfer for selected web page. Some phrases sets can tell the rule engine directly, others can only guide for proper category. For instance if on page appear word ``Nazism'' there is a high probability that page is not appropriate for the fourteen year olds or youngers. The classification of this type can be described as \textbf{direct rule}. Other phrases only guide us for adequate classification. Let's think about phrase ``Adolf Hitle''r. There is still huge probability that web page contains text about Nazism, but also can lead to page about Adolf Hitlers biography that can be  suitable for high school students.
+Almost every indexed web page can be classified by usage of particular\textbf{keywords}. Analyzing appearance of keywords used on page known also as \textbf{search phrase} can tell about age requirements of web surfer for selected web page. Some phrases sets can tell the rule engine directly, others can only guide for proper category. For example if on page appear word  ``Nazism'' there is a high probability that page is not appropriate for the fourteen year old’s or youngers. The classification of this type can be described as  \textbf{direct rule}. Other phrases only guide us for adequate classification. Let’s think about phrase ``Adolf Hitler''. There is still huge probability that web page contains text about Nazism, but also can lead to page about Adolf Hitler’s biography that can be  suitable for high school students.
 
 This leave us with important problem, dysfunction of proper phrases classification that appears on web pages. Let's think about word ``breast'', which could lead us to erotic or even pornographic pages. But when we add another keyword and find material about ``breast cancer'' we can find medical pages about common disease that can be discussed also by high school students. However this time adding another keyword can lead us to very different pages in comparison to phrase ``Adolf Hitler''. We would call it \textbf{not direct rule}. This forces us to careful selection of keywords like proper phrase weight to distinguish direct form of non direct rules of comparison.
 
@@ -110,7 +110,7 @@ foreach (phrase in webPageTextContent)
 
 \begin{multicols}{2}
 \section{Keywords with weight}
-Concept of \textbf{keywords with weight} is a simple idea of extending semantic meaning of the word that is written in text, For instance usage of Latin alphabet letters by number value. To add more complications let analyze for example word sex which may function as a verb or function as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicate direct classification because having one world we cannot decide with correct probability if the page is safe so we might want to estimate \textbf{dangerous factor} \(\omega\) as equal 0.6. Lets define \textbf{keyword with weight} \(K\) as as:
+Concept of \textbf{keywords with weight} is a simple idea of extending semantic meaning of the word that is written in text, For instance usage of Latin alphabet letters by number value. To add more complications let analyze for example word sex which may function as a verb or function as a noun with five different meaning according to Dictionary.com\cite{noauthor_dictionary.com_2018}. This complicate direct classification because having one world we cannot decide with correct probability if the page is safe so we might want to estimate \textbf{dangerous factor} \(\omega\) as equal 0.6. Lets define \textbf{keyword with weight} \(K\) as:
 %\begin{math}
 $$
 K = \{a_1a_2a_3...a_n, \omega : a_n \in [A-Z], 
@@ -119,7 +119,7 @@ $$
 n \in \mathbb{N}, \omega \in \textless0,1\textgreater\}.
 $$
 %\end{math} 
-The bigger is dangerous factor\(\omega\) the more valuable keyword is because is it more efficient in classifying page as unsafe. In Red Flag Dictionaries described in algorithm [alg\ref{alg1} we are expecting to include those keywords.
+The bigger is dangerous factor\(\omega\) the more valuable keyword is because is it more efficient in classifying page as unsafe. In Red Flag Dictionaries described in algorithm [Alg\ref{alg1}] we are expecting to include those keywords.
 
 \section{Keywords weight update and searching for new valuable keywords}
 Main characteristics of a language is that, that  is dynamically changing. More  new words appearing or slogan words are used. Some of them  become obsolete which rises issue to constantly update a dictionary and weight of dangerous factors \(\omega\).
@@ -171,7 +171,7 @@ Fifth the most complicated and resources consumer module is data-mining program 
 Of course this system is going to grow in time and some modules are going to be divided with smaller components with more specialized features like fourth module which is  going to be divided with base for different DNS servers grouped by different pages categories described in section Web pages category.
 
 \section{Web Page Classification Information System appliance}
-First and the most obvious place to use this appliance is home environment where young children and adolescent require safe Internet access. Second also important place to use the system is in work environment and educational places like schools, museums where it is important to provide reduced access to some Internet resources..
+First and the most obvious place to use this appliance is home environment where young children and adolescent require safe Internet access. Second also important place to use the system is in work environment and educational places like schools, museums where it is important to provide reduced access to some Internet resources.
 
 \section{Conclusion and future plans}
 The reason of this article appearance is to design new classification method. In near future new systems are going to be implemented. The most important feature  of this program is to create plenty of DNS servers containing records of censured web domains depending on the outcome of various classification algorithms. This DNS systems can be applied  to endpoint of computers and are going to greatly reduce access to unsafe or prohibited web resources.
